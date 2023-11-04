@@ -1,0 +1,19 @@
+•	20/08/2023 Started project and began research into AES encryption and cryptography
+•	27/08/2023 Performed research into various methods of implementation and decided on FPGA
+•	01/09/2023 Started developing Verilog skills with guides, tutorials, and books
+•	20/09/2023 University started
+•	01/10/2023 Recorded down the processes of all AES-128
+•	05/10/2023 Using decomposition, broke down the processes into key modules and created design specifications for each one
+•	07/10/2023 Began implementation
+•	08/10/2023 Designed specifications for the expected inputs and outputs
+•	10/10/2023 Started the main module to take in input, outputs and call the main modules
+•	13/10/2023 Finished designing the main module
+•	15/10/2023 Created the skeleton code for the decryption and encryption modules, and to declare all inputs and outputs to the modules
+•	20/10/2023 Began work on the key scheduler module
+•	25/10/2023 Started the key operations module within the key scheduler module
+•	27/10/2023 Created the subWords submodule for the key operation module
+o	This will be used within the encryption module as well
+•	30/10/2023 Finished the key operations module
+o	performs rotWords, subWords and RCon
+•	04/11/2023 Finished the key scheduler module
+•	05/11/2023 Began work on encryption calculation modules
