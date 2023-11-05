@@ -16,7 +16,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module keyOperations(
     input [31:0] inKey,
-	 input [3:0] roundNo,
+    input [3:0] roundNo,
     output [31:0] outData
     );
 	 reg byte0,byte1,byte2,byte3; //4 x 8 bit values from the input key
