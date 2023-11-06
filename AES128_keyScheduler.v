@@ -45,7 +45,7 @@ module AES128_keyScheduler(
 	 assign outKey0[127:95] = {w0,w1,w2,w3};
 	 
 	 //Key operations is calculated using the last word of the key
-	 keyOperations k0(.a(w3),.outa(out1));
+	 keyOperations k0(.a(w3),.roundNo(4'd1),.outa(out1));
 	 
 	 //the xor calculations are performed using the previous word and the corresponding word from the previous key
 	 assign w4 = w0^out1;
@@ -57,7 +57,7 @@ module AES128_keyScheduler(
 	 
 	 //This is repeated for all keys
 	 //Key 2
-	 keyOperations k1(.a(w7),.outa(out2));
+	 keyOperations k1(.a(w7),.roundNo(4'd2),.outa(out2));
 	 
 	 assign w8 = w4^out2;
 	 assign w9 = w5^w8;
@@ -67,7 +67,7 @@ module AES128_keyScheduler(
 	 assign outKey2 = {w8,w9,w10,w11};
 	 
 	 //Key 3
-	 keyOperations k2(.a(w11),.outa(out3));
+	 keyOperations k2(.a(w11),.roundNo(4'd3),.outa(out3));
 	 
 	 assign w12 = w8^out3;
 	 assign w13 = w9^w12;
@@ -77,7 +77,7 @@ module AES128_keyScheduler(
 	 assign outKey3 = {w12,w13,w14,w15};
 	 
 	 //Key 4
-	 keyOperations k3(.a(w15),.outa(out4));
+	 keyOperations k3(.a(w15),.roundNo(4'd4),.outa(out4));
 	 
 	 assign w16 = w12^out4;
 	 assign w17 = w13^w16;
@@ -87,7 +87,7 @@ module AES128_keyScheduler(
 	 assign outKey4 = {w16,w17,w18,w19};
 	 
 	 //Key 5
-	 keyOperations k4(.a(w19),.outa(out5));
+	 keyOperations k4(.a(w19),.roundNo(4'd5),.outa(out5));
 	 
 	 assign w20 = w16^out5;
 	 assign w21 = w17^w20;
@@ -97,7 +97,7 @@ module AES128_keyScheduler(
 	 assign outKey5 = {w20,w21,w22,w23};
 	 
 	 //Key 6
-	 keyOperations k5(.a(w23),.outa(out6));
+	 keyOperations k5(.a(w23),.roundNo(4'd6),.outa(out6));
 	 
 	 assign w24 = w20^out6;
 	 assign w25 = w21^w24;
@@ -107,7 +107,7 @@ module AES128_keyScheduler(
 	 assign outKey6 = {w24,w25,w26,w27};
 	 
 	 //Key 7
-	 keyOperations k6(.a(w27),.outa(out7));
+	 keyOperations k6(.a(w27),.roundNo(4'd7),.outa(out7));
 	 
 	 assign w28 = w24^out7;
 	 assign w29 = w25^w28;
@@ -117,7 +117,7 @@ module AES128_keyScheduler(
 	 assign outKey7 = {w28,w29,w30,w31};
 	 
 	 //Key 8
-	 keyOperations k7(.a(w31),.outa(out8));
+	 keyOperations k7(.a(w31),.roundNo(4'd8),.outa(out8));
 	 
 	 assign w32 = w28^out8;
 	 assign w33 = w29^w32;
@@ -127,7 +127,7 @@ module AES128_keyScheduler(
 	 assign outKey8 = {w32,w33,w34,w35};
 	 
 	 //Key 9
-	 keyOperations k8(.a(w35),.outa(out9));
+	 keyOperations k8(.a(w35),.roundNo(4'd9),.outa(out9));
 	 
 	 assign w36 = w32^out9;
 	 assign w37 = w33^w36;
@@ -137,7 +137,7 @@ module AES128_keyScheduler(
 	 assign outKey9 = {w36,w37,w38,w39};
 	 
 	 //Key 10
-	 keyOperations k9(.a(w39),.outa(out10));
+	 keyOperations k9(.a(w39),.roundNo(4'd10),.outa(out10));
 	 
 	 assign w40 = w36^out10;
 	 assign w41 = w37^w40;
