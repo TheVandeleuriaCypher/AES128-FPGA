@@ -22,7 +22,7 @@ module AES128_encrypt(
 	 input [127:0] keyToOperate,
 	 output reg opComplete,
 	 output reg [127:0] opRetValue
-    	 );
+    );
 	 //returns 1 when the entire system finishes processing
 	 assign opComplete = 0;
 	 //outputs the key for each round of encryption
