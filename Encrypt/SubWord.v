@@ -15,8 +15,8 @@
 //Step 4) Returns it as sOut
 //////////////////////////////////////////////////////////////////////////////////
 module SubWord(
-    input [7:0] subIn,
-    output [7:0] subOut
+    	 input [7:0] subIn,
+    	 output [7:0] subOut
     );
 	 
 	 wire sOut;
