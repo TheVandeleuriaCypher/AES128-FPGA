@@ -17,10 +17,10 @@
 //Step 6) The value is then returned as outputData
 //////////////////////////////////////////////////////////////////////////////////
 module decrypt_round(
-    input CLK,
-    input [127:0] inputData,
-    input [127:0] inputKey,
-    output [127:0] outputData
+    	input CLK,
+    	input [127:0] inputData,
+    	input [127:0] inputKey,
+    	output [127:0] outputData
     );
 	 
 	 wire [127:0] InvShiftRowsIn,InvSubWordIn,AddRoundKeyIn,InvMixColumnsIn;
