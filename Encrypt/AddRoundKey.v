@@ -14,9 +14,9 @@
 //Step 3) The value is then returned as outputData
 //////////////////////////////////////////////////////////////////////////////////
 module AddRoundKey(
-    input [127:0] inputKey,
-    input [127:0] inputData,
-    output [127:0] outputData
+    	 input [127:0] inputKey,
+   	 input [127:0] inputData,
+   	 output [127:0] outputData
     );
 	 reg[127:0] temp;//temporarily holds the output
 	 always @(inputData)//whenever different data is detected, the output data is recalculated
