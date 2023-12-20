@@ -16,18 +16,18 @@
 //Step 5) Repeat until 10 keys are created
 //////////////////////////////////////////////////////////////////////////////////
 module AES128_keyScheduler(
-    input [127:0] inKey,
-    output wire [127:0] outKey0,
-    output wire [127:0] outKey1,
-    output wire [127:0] outKey2,
-    output wire [127:0] outKey3,
-    output wire [127:0] outKey4,
-    output wire [127:0] outKey5,
-    output wire [127:0] outKey6,
-    output wire [127:0] outKey7,
-    output wire [127:0] outKey8,
-    output wire [127:0] outKey9,
-    output wire [127:0] outKey10
+   	 input [127:0] inKey,
+   	 output wire [127:0] outKey0,
+   	 output wire [127:0] outKey1,
+   	 output wire [127:0] outKey2,
+   	 output wire [127:0] outKey3,
+   	 output wire [127:0] outKey4,
+   	 output wire [127:0] outKey5,
+   	 output wire [127:0] outKey6,
+   	 output wire [127:0] outKey7,
+   	 output wire [127:0] outKey8,
+   	 output wire [127:0] outKey9,
+   	 output wire [127:0] outKey10
     );
 	 
 	 wire [31:0] out1,out2,out3,out4,out5,out6,out7,out8,out9,out10;
