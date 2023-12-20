@@ -15,14 +15,15 @@
 //Step 4) Add the round constant to the first 8 bits
 //////////////////////////////////////////////////////////////////////////////////
 module keyOperations(
-    	 input [31:0] inKey,
+    input [31:0] inKey,
 	 input [3:0] roundNo,
-    	 output [31:0] outData
+    output [31:0] outData
     );
-	 reg byte0,byte1,byte2,byte3; //4 x 8 bit values from the input key
-	 reg rcon; //the round constant, and this changes depending on the round number
-	 wire out0, out1, out2, out3; //These are the 8 bit data that form the output data
-	 wire temp; //This is used to temporarily hold the data for the first bit to perform rcon
+	 wire [7:0] byte0,byte1,byte2,byte3; //4 x 8 bit values from the input key
+	 reg [7:0] rcon; //the round constant, and this changes depending on the round number
+	 wire [7:0] out0, out1, out2; //These are the 8 bit data that form the output
+	 reg [7:0] out3;//has calculations performed upon it
+	 wire [7:0] temp; //This is used to temporarily hold the data for the first bit to perform rcon
 	 
 	 //assignment and the bytes are rotated immediately
 	 assign byte3 = inKey[31:24];
@@ -52,8 +53,8 @@ module keyOperations(
 				4'd09: rcon = 8'h1B;
 				4'd10: rcon = 8'h36;
 		  endcase
-		  assign out3 = temp ^ rcon;
-		  outData <= {out3,out2,out1,out0};
+		  out3 = temp ^ rcon;
 	 end
+	 assign outData = {out3,out2,out1,out0};
 
 endmodule
