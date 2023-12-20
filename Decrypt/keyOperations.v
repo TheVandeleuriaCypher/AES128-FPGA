@@ -15,9 +15,9 @@
 //Step 4) Add the round constant to the first 8 bits
 //////////////////////////////////////////////////////////////////////////////////
 module keyOperations(
-    input [31:0] inKey,
+   	 input [31:0] inKey,
 	 input [3:0] roundNo,
-    output [31:0] outData
+   	 output [31:0] outData
     );
 	 wire [7:0] byte0,byte1,byte2,byte3; //4 x 8 bit values from the input key
 	 reg [7:0] rcon; //the round constant, and this changes depending on the round number
