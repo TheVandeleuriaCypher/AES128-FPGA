@@ -56,27 +56,27 @@ module AES128_decrypt(
 	 //Step 3
 	 //Perform InvShiftRows, InvSubBytes, AddRoundKey and InvMixColumns Modules loop 9 times with the various keys in order
 	 //Pass 1
-    decrypt_round round1decrypt (.CLK(CLK),.inputKey(outKey9),.inputData(inData1),.outputData(outData1));
+   	 decrypt_round round1decrypt (.CLK(CLK),.inputKey(outKey9),.inputData(inData1),.outputData(outData1));
 	 //Pass 2
-    decrypt_round round2decrypt (.CLK(CLK),.inputKey(outKey8),.inputData(inData2),.outputData(outData2));
+   	 decrypt_round round2decrypt (.CLK(CLK),.inputKey(outKey8),.inputData(inData2),.outputData(outData2));
 	 //Pass 3
-    decrypt_round round3decrypt (.CLK(CLK),.inputKey(outKey7),.inputData(inData3),.outputData(outData3));
+   	 decrypt_round round3decrypt (.CLK(CLK),.inputKey(outKey7),.inputData(inData3),.outputData(outData3));
 	 //Pass 4
-    decrypt_round round4decrypt (.CLK(CLK),.inputKey(outKey6),.inputData(inData4),.outputData(outData4));
+   	 decrypt_round round4decrypt (.CLK(CLK),.inputKey(outKey6),.inputData(inData4),.outputData(outData4));
 	 //Pass 5
-    decrypt_round round5decrypt (.CLK(CLK),.inputKey(outKey5),.inputData(inData5),.outputData(outData5));
+   	 decrypt_round round5decrypt (.CLK(CLK),.inputKey(outKey5),.inputData(inData5),.outputData(outData5));
 	 //Pass 6
-    decrypt_round round6decrypt (.CLK(CLK),.inputKey(outKey4),.inputData(inData6),.outputData(outData6));
+   	 decrypt_round round6decrypt (.CLK(CLK),.inputKey(outKey4),.inputData(inData6),.outputData(outData6));
 	 //Pass 7
-    decrypt_round round7decrypt (.CLK(CLK),.inputKey(outKey3),.inputData(inData7),.outputData(outData7));
+   	 decrypt_round round7decrypt (.CLK(CLK),.inputKey(outKey3),.inputData(inData7),.outputData(outData7));
 	 //Pass 8
-    decrypt_round round8decrypt (.CLK(CLK),.inputKey(outKey2),.inputData(inData8),.outputData(outData8));
+   	 decrypt_round round8decrypt (.CLK(CLK),.inputKey(outKey2),.inputData(inData8),.outputData(outData8));
 	 //Pass 9
-    decrypt_round round9decrypt (.CLK(CLK),.inputKey(outKey1),.inputData(inData9),.outputData(outData9));
+   	 decrypt_round round9decrypt (.CLK(CLK),.inputKey(outKey1),.inputData(inData9),.outputData(outData9));
 	 
 	 //Step 4
 	 //Pass 10
-    decrypt_final_round round10decrypt (.CLK(CLK),.inputKey(outKey0),.inputData(inData10),.outputData(outData10));
+   	 decrypt_final_round round10decrypt (.CLK(CLK),.inputKey(outKey0),.inputData(inData10),.outputData(outData10));
 	 
 	 assign opRetValue = outData10;
 endmodule
