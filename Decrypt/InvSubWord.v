@@ -15,8 +15,8 @@
 //Step 4) Returns it as invSubOut
 //////////////////////////////////////////////////////////////////////////////////
 module InvSubWord(
-    input [7:0] invSubIn,
-    output [7:0] invSubOut
+   	 input [7:0] invSubIn,
+   	 output [7:0] invSubOut
     );
 	 
 	 reg [7:0] sOut;
