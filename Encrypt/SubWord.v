@@ -9,17 +9,17 @@
 // Revision 0.01 - File Created
 // Additional Comments: 
 //
-//Step 1) Takes input of an 8 bit number, sIn
+//Step 1) Takes input of an 8 bit number, subIn
 //Step 2) Compares it hexadecimal value to the various cases statement as shown below
-//Step 3) Perform the worb substituion using S-box Rjindael substitution
-//Step 4) Returns it as sOut
+//Step 3) Perform the worb substituion using Rjindael S-box substitution
+//Step 4) Returns it as subOut
 //////////////////////////////////////////////////////////////////////////////////
 module SubWord(
-    	 input [7:0] subIn,
-    	 output [7:0] subOut
+    input [7:0] subIn,
+    output [7:0] subOut
     );
 	 
-	 wire sOut;
+	 reg [7:0] sOut;
 	 always@(subIn)
 	 //uses a long case statement to compare the invalue and return the corresponding value from the Rjindael S-Box
 		  begin
@@ -281,9 +281,8 @@ module SubWord(
 				8'hFE: sOut=8'hBB;
 				8'hFF: sOut=8'h16;
 		  endcase
-	     
 	 end
+	 
+	 //Step 4
 	 assign subOut = sOut;
-
-
 endmodule

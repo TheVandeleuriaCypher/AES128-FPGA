@@ -16,10 +16,10 @@
 //Step 5) The value is then returned as outputData
 //////////////////////////////////////////////////////////////////////////////////
 module encrypt_final_round(
-    	 input CLK,
-    	 input [127:0]inputKey,
-    	 input [127:0]inputData,
-    	 output [127:0]outData
+    input CLK,
+    input [127:0]inputKey,
+    input [127:0]inputData,
+    output [127:0]outputData
     );
 	 wire [127:0] SubBytesIn,ShiftRowsIn,RoundKeyIn;
 	 wire [127:0] SubBytesOut,ShiftRowsOut,RoundKeyOut;

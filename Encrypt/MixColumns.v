@@ -15,12 +15,13 @@
 //Step 4) Returns it as outData
 //////////////////////////////////////////////////////////////////////////////////
 module MixColumns(
-	 input inData,
-	 output outData
+	 input [127:0] inData,
+	 output [127:0] outData
     );
 	 
 	 wire [7:0] s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15;
-	 wire [7:0] t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15;
+	 reg [7:0] t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15;
+	 
 	 assign s0 = inData[7:0];
 	 assign s1 = inData[15:8];
 	 assign s2 = inData[23:16];
@@ -82,14 +83,14 @@ module MixColumns(
 	 
 	 //Step 3
 	 //function to perform the individual matrix multiplications of each element multiplication
-	 function integer mult(input integer num1, input integer num2);
+	 function [7:0] mult(input[7:0] num1,num2);
 		  case(num2)
 				//4'd1: mult = num1;
 				//for the case that num2 is either 2 or 3, we need to account for the use of Irreducible Polynomial Theorem
 				//e.g. in the case of numbers greater than 8 bits, e.g. 1100 0000 shifted into 1 1000 0000, then the 1 in the 9th digit slot should be subsituted to be 0001 1011 or 1b
 				//we AND with 8'hff to remove any digits at positions more than the 8th bit
-				4'd2: mult = (a<8'h80)?num1<<1:((num1<<1)&8'hff)^8'h1b;
-				4'd3: mult = (a<8'h80)?num1<<1^num1:((num1<<1)&8'hff)^8'h1b^num1;
+				4'd2: mult = (num1<8'h80)? num1 << 1 : ((num1<<1)&8'hff) ^ 8'h1b;
+				4'd3: mult = (num1<8'h80)? num1 << 1^num1 : ((num1<<1)&8'hff) ^ 8'h1b ^ num1;
 		  endcase
 	 endfunction
 

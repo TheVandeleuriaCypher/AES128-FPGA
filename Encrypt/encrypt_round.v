@@ -31,9 +31,10 @@ module encrypt_round(
 	 assign RoundKeyIn = MixColumnsOut;
 	 
 	 //Step 2
+	 //Performs SubBytes
 	 genvar i;
 	 for(i=0;i<16;i=i+1) 
-	 begin: SubBytes
+	 begin: SubWord
 		  SubWord sub_bytes(.subIn(SubBytesIn[(8*i+7):8*i]),.subOut(SubBytesOut[(8*i+7):8*i])); 	
 	 end
 	 

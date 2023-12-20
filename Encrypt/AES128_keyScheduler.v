@@ -16,18 +16,18 @@
 //Step 5) Repeat until 10 keys are created
 //////////////////////////////////////////////////////////////////////////////////
 module AES128_keyScheduler(
-    	 input [127:0] inKey,
-    	 output wire [127:0] outKey0,
-    	 output wire [127:0] outKey1,
-    	 output wire [127:0] outKey2,
-    	 output wire [127:0] outKey3,
-    	 output wire [127:0] outKey4,
-    	 output wire [127:0] outKey5,
-    	 output wire [127:0] outKey6,
-    	 output wire [127:0] outKey7,
-    	 output wire [127:0] outKey8,
-    	 output wire [127:0] outKey9,
-    	 output wire [127:0] outKey10
+    input [127:0] inKey,
+    output wire [127:0] outKey0,
+    output wire [127:0] outKey1,
+    output wire [127:0] outKey2,
+    output wire [127:0] outKey3,
+    output wire [127:0] outKey4,
+    output wire [127:0] outKey5,
+    output wire [127:0] outKey6,
+    output wire [127:0] outKey7,
+    output wire [127:0] outKey8,
+    output wire [127:0] outKey9,
+    output wire [127:0] outKey10
     );
 	 
 	 wire [31:0] out1,out2,out3,out4,out5,out6,out7,out8,out9,out10;
@@ -36,16 +36,16 @@ module AES128_keyScheduler(
 	 wire [31:0] w0,w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,w16,w17,w18,w19,w20,w21,w22,w23,w24,w25,w26,w27,w28,w29,w30,w31,w32,w33,w34,w35,w36,w37,w38,w39,w40,w41,w42,w43;
 	 
 	 //Assigns the first words from the input key
-	 assign w0 = inKey[127:95];
-	 assign w1 = inKey[95:63];
-	 assign w2 = inKey[63:31];
+	 assign w0 = inKey[127:96];
+	 assign w1 = inKey[95:64];
+	 assign w2 = inKey[63:32];
 	 assign w3 = inKey[31:0];
 	 
 	 //Returns the input key as the first output key
-	 assign outKey0[127:95] = {w0,w1,w2,w3};
+	 assign outKey0 = {w0,w1,w2,w3};
 	 
 	 //Key operations is calculated using the last word of the key
-	 keyOperations k0(.a(w3),.roundNo(4'd1),.outa(out1));
+	 keyOperations k0(.inKey(w3),.roundNo(4'd1),.outData(out1));
 	 
 	 //the xor calculations are performed using the previous word and the corresponding word from the previous key
 	 assign w4 = w0^out1;
